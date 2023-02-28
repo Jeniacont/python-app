@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PNG to PDF Converter</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='mystyle2.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='liststyle.css') }}"
+    />
+    <meta
+      name="description"
+      content="Best way to convert your JPG to PNG file in seconds. 100% free, secure and easy to use! This free online tool converts your JPG images to PNG format."
+    />
+    <meta
+      name="keywords"
+      content="jpg to png transparent,jpg to pdf converter,jpg to png converter free download,jpg to png signature,jpg to png i love pdf,jpg to png converter software,online converter,jpg to png"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.png') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Tools</a>
+          <div class="dropdown-content">
+            <a href="/jpgtopng">JPG to PNG</a>
+            <a href="/pngtojpg">PNG to JPG</a>
+            <a href="/webptopng">WEBP to PNG</a>
+            <a href="/bmptopng">BMP to PNG</a>
+            <a href="/pngtopdf">PNG to PDF</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <main>
+      <div class="container">
+        <form
+          enctype="multipart/form-data"
+          method="POST"
+          action="/api/pngtopdf"
+        >
+          <h1>PNG to PDF Converter</h1>
+          <label for="image">Select a PNG image:</label>
+          <input
+            type="file"
+            name="image"
+            id="image"
+            accept="image/png"
+            required
+            onchange="previewImage()"
+          />
+          <br />
+          <img id="image-preview" src="#" alt="Image Preview" />
+          <button type="submit" onclick="convertImage()">Convert to PDF</button>
+          <button
+            type="button"
+            id="delete-preview"
+            onclick="deleteImagePreview()"
+            style="display: none"
+          >
+            Delete Preview
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <div class="footer">
+      <p>&copy; Copyright 2023</p>
+    </div>
+
+    <script>
+      function convertImage() {
+        var imageInput = document.getElementById("image");
+        var image = imageInput.files[0];
+
+        if (!image) {
+          alert("Please select an image.");
+          return false;
+        }
+
+        if (!image.type.startsWith("image/png")) {
+          alert("Please select a PNG image.");
+          return false;
+        }
+
+        if (image.size > 5 * 1024 * 1024) {
+          alert("Please select an image less than 5 MB in size.");
+          return false;
+        }
+      }
+
+      function previewImage() {
+        const preview = document.querySelector("#image-preview");
+        const file = document.querySelector("#image").files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener(
+          "load",
+          function () {
+            const image = new Image();
+            image.src = reader.result;
+            preview.innerHTML = "";
+            preview.appendChild(image);
+            document.querySelector("#delete-preview").style.display =
+              "inline-block";
+          },
+          false
+        );
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      }
+
+      function deleteImagePreview() {
+        document.querySelector("#image-preview").innerHTML = "";
+        document.querySelector("#image").value = "";
+        document.querySelector("#delete-preview").style.display = "none";
+      }
+
+      document.querySelector("#image").addEventListener("change", previewImage);
+    </script>
+  </body>
+</html>
