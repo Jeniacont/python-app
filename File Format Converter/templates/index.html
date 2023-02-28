@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Format Converter</title>
+    <link rel="icon" type="image/png" href="/favicon" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='mystyle.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='liststyle.css') }}"
+    />
+    <meta
+      name="description"
+      content="Best way to convert your JPG to PNG file in seconds. 100% free, secure and easy to use! This free online tool converts your JPG images to PNG format."
+    />
+    <meta
+      name="keywords"
+      content="jpg to png transparent,jpg to pdf converter,jpg to png converter free download,jpg to png signature,jpg to png i love pdf,jpg to png converter software,online converter,jpg to png"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon.png') }}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Tools</a>
+          <div class="dropdown-content">
+            <a href="/jpgtopng">JPG to PNG</a>
+            <a href="/pngtojpg">PNG to JPG</a>
+            <a href="/webptopng">WEBP to PNG</a>
+            <a href="/bmptopng">BMP to PNG</a>
+            <a href="/pngtopdf">PNG to PDF</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!------------>
+
+    <main>
+      <div class="container">
+        <h2>Online Image Converter Tools</h2>
+        <div id="select-area">
+          <a href="/jpgtopng" class="file-input">
+            <i class="fas fa-file-image"></i> JPG to PNG</a
+          >
+        </div>
+
+        <div id="select-area">
+          <a href="/pngtojpg" class="file-input">
+            <i class="fas fa-file-image"></i> PNG to JPG</a
+          >
+        </div>
+        <div id="select-area">
+          <a href="/webptopng" class="file-input">
+            <i class="fas fa-file-image"></i> WEBP to PNG</a
+          >
+        </div>
+        <div id="select-area">
+          <a href="/bmptopng" class="file-input">
+            <i class="fas fa-file-image"></i> BMP to PNG</a
+          >
+        </div>
+        <div id="select-area">
+          <a href="/pngtopdf" class="file-input">
+            <i class="fas fa-file-image"></i> PNG to PDF</a
+          >
+        </div>
+      </div>
+    </main>
+    <!--footer-->
+    <div class="footer">
+      <p>&copy; Copyright 2023</p>
+    </div>
+  </body>
+</html>
