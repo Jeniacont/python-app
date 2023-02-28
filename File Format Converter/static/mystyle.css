@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:#603280;
+}
+::selection{
+    color: white;
+    background:#9562b6;
+
+}
+.container{
+    width: 430px;
+    background: #E2E3DE;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+
+}
+
+.container header{
+    color:#603280;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container #select-area{
+    height:67px;
+    display: flex;
+    cursor: pointer;
+    margin:30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border:2px dashed #9562b6;
+  
+
+}
+
+#select-area :where(i,p){
+    color:#9562b6;
+    font-weight: bold;
+}
+
+#select-area i{
+    font-size: 50px;
+}
+
+#select-area p{
+    margin-top: 15px;
+    font-size: 16px;
+}
+#select-area a{
+    color:#603280;
+    font-size: 25px;
+    text-decoration: none;
+    padding-bottom: 7px;
+}
+.container h2{
+    color:#603280;
+    
+}
