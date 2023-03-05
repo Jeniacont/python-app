@@ -37,7 +37,7 @@
       <label for="image">Select a BMP image:</label>
       <input type="file" name="image" id="image" accept="image/bmp" required onchange="previewImage()">
       <br>
-      <img id="image-preview" src="#" alt="Image Preview">
+     <div id="image-preview"></div>
       <button type="submit" onclick="convertImage()">Convert to PNG</button>
       <button type="button" id="delete-preview" onclick="deleteImagePreview()" style="display:none">Delete Preview</button>
     </form>
